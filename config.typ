@@ -6,6 +6,7 @@
     "/rules/": "规则",
     "/stories/": "故事",
     "/analysis/": "解析",
+    "/templates/": "模板",
   ),
   title: "规则怪谈档案馆",
 )
