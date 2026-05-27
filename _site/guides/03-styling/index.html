@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>样式</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.8.0/tufte.min.css">
+    <link rel="stylesheet" href="/assets/tufted.css">
+    <link rel="stylesheet" href="/assets/custom.css">
+  </head>
+  <body>
+    <header>
+      <nav><a href="/">主页</a><a href="/rules/">规则</a><a href="/stories/">故事</a><a href="/analysis/">解析</a><a href="/templates/">模板</a><a href="/guides/">指南</a></nav>
+    </header>
+    <article>
+      <section>
+        <h2>样式</h2>
+        <p>网站的视觉外观由 CSS 控制。</p>
+        <h3>默认样式表</h3>
+        <p>该模板接受一个 <code>css</code> 参数，该参数接受一个URL或样式表路径的数组。默认情况下，它加载三个样式表:</p>
+        <pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">let</span> <span style="color: #4b69c6">tufted-web</span>(<br>  <span style="color: #74747c">// ...</span><br>  css: (<br>    <span style="color: #198810">"https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.8.0/tufte.min.css"</span>,<br>    <span style="color: #198810">"/assets/tufted.css"</span>,<br>    <span style="color: #198810">"/assets/custom.css"</span>,<br>  ),<br>  <span style="color: #74747c">// ...</span><br>)</code></pre>
+        <h3>定制样式</h3>
+        <p>要覆盖默认样式，您可以在<code>assets/custom.css</code>中添加CSS规则。由于它默认最后加载，您的规则将覆盖其他规则。</p>
+        <p>例如要更改链接颜色：</p>
+        <pre><code data-lang="css"><span style="color: #4b69c6">a</span> {<br>  <span style="color: #4b69c6">color</span>: <span style="color: #b60157">#</span><span style="color: #b60157">ff0000</span>;<br>}</code></pre>
+        <h3>覆盖默认样式表</h3>
+        <p>要覆盖默认样式表，您可以在<code>config.typ</code>中提供自己的样式表列表。例如，要仅使用自定义样式表：</p>
+        <pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"@preview/tufted:0.1.1"</span><br><br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> template <span style="color: #d73948">=</span> tufted.tufted-web.<span style="color: #4b69c6">with</span>(<br>  css: (<span style="color: #198810">"/assets/style.css"</span>,),<br>)</code></pre>
+      </section>
+    </article>
+  </body>
+</html>
