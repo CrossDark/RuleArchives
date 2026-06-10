@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, kych
 #show: template.with(title: "荷克格姆鬼屋规则怪谈")
 
 #set heading(numbering: "1.1") // Set heading numbering to 1.1, 1.2, etc. / 设置标题编号为1.1、1.2等

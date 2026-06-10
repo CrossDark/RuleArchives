@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, kych
 #show: template.with(title: "控制论")
 
 = 自动化工厂运行指南

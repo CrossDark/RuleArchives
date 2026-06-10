@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, kych
 #show: template.with(title: "Quick Start")
 
 = 快速开始

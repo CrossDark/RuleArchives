@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, kych
 #show: template.with(title: "模板")
 
 = 模板

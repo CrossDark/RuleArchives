@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>规则怪谈档案馆</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.8.0/tufte.min.css">
-    <link rel="stylesheet" href="/assets/tufted.css">
+    <link rel="stylesheet" href="/assets/kych.css">
     <link rel="stylesheet" href="/assets/custom.css">
   </head>
   <body>
@@ -16,7 +16,7 @@
       <section>
         <h2>嵌入Markdown</h2>
         <p>你可以使用<code>cmarker</code>在你的Typst文档中嵌入Markdown内容。这在将现有的Markdown文件整合到基于Typst的网站中特别有用。要渲染数学表达式，请使用<code>mitex</code>。</p>
-        <pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"../index.typ"</span>: template, tufted<br><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"@preview/cmarker:0.1.8"</span><br><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"@preview/mitex:0.2.6"</span>: mitex<br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">template</span><br><br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> md-content <span style="color: #d73948">=</span> <span style="color: #4b69c6">read</span>(<span style="color: #198810">"tufted-titmouse.md"</span>)<br><br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> def-dict <span style="color: #d73948">=</span> (<br>  image: (source, alt: <span style="color: #d73948">none</span>, format: <span style="color: #d73948">auto</span>) <span style="color: #d73948">=></span> <span style="color: #4b69c6">figure</span>(<span style="color: #4b69c6">image</span>(<br>    source,<br>    alt: alt,<br>    format: format,<br>  )),<br>)<br><br><span style="color: #8b41b1">#</span><span style="color: #8b41b1">cmarker</span>.<span style="color: #4b69c6">render</span>(md-content, math: mitex, scope: def-dict)</code></pre>
+        <pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"../index.typ"</span>: template, kych<br><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"@preview/cmarker:0.1.8"</span><br><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"@preview/mitex:0.2.6"</span>: mitex<br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">template</span><br><br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> md-content <span style="color: #d73948">=</span> <span style="color: #4b69c6">read</span>(<span style="color: #198810">"kych-titmouse.md"</span>)<br><br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> def-dict <span style="color: #d73948">=</span> (<br>  image: (source, alt: <span style="color: #d73948">none</span>, format: <span style="color: #d73948">auto</span>) <span style="color: #d73948">=></span> <span style="color: #4b69c6">figure</span>(<span style="color: #4b69c6">image</span>(<br>    source,<br>    alt: alt,<br>    format: format,<br>  )),<br>)<br><br><span style="color: #8b41b1">#</span><span style="color: #8b41b1">cmarker</span>.<span style="color: #4b69c6">render</span>(md-content, math: mitex, scope: def-dict)</code></pre>
         <p>下面的内容是从一个Markdown文件渲染的：</p>
         <h2><em>Baeolophus bicolor</em></h2>
         <p><em>Baeolophus bicolor</em>是一种小型、有魅力的鸣禽，原产于北美东部的落叶林。这些鸟以其独特的灰色冠、大黑眼睛和锈色的侧翼而可辨认，它们是杂技觅食者，也是后院觅食者的常客。在冬天，它们经常与小鸡和小鸡混为羊群。他们的歌是一首清晰的、口哨的彼得-彼得-彼得。</p>

@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, kych
 #show: template.with(title: "样式")
 
 = 样式
@@ -10,11 +10,11 @@
 该模板接受一个 `css` 参数，该参数接受一个URL或样式表路径的数组。默认情况下，它加载三个样式表:
 
 ```typst
-#let tufted-web(
+#let kych-web(
   // ...
   css: (
     "https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.8.0/tufte.min.css",
-    "/assets/tufted.css",
+    "/assets/kych.css",
     "/assets/custom.css",
   ),
   // ...
@@ -38,9 +38,9 @@ a {
 要覆盖默认样式表，您可以在`config.typ`中提供自己的样式表列表。例如，要仅使用自定义样式表：
 
 ```typst
-#import "@preview/tufted:0.1.1"
+#import "@preview/kych:0.1.1"
 
-#let template = tufted.tufted-web.with(
+#let template = kych.kych-web.with(
   css: ("/assets/style.css",),
 )
 ```

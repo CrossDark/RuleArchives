@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, kych
 #show: template.with(title: "控制论")
 
 #import "@preview/numbly:0.1.0": numbly // 引入 numbly 插件以支持数字计算

@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../index.typ": template, kych
 #import "@preview/citegeist:0.2.2": load-bibliography
 #show: template.with(title: "乌苏苍人史")
 

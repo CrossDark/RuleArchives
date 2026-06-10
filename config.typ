@@ -1,6 +1,6 @@
-#import "@preview/tufted:0.1.1"
+#import "@preview/kych:0.1.0"
 
-#let template = tufted.tufted-web.with(
+#let template = kych.kych-show.with(
   header-links: (
     "/": "主页",
     "/rules/": "规则",

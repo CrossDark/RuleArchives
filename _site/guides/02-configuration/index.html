@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>配置</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.8.0/tufte.min.css">
-    <link rel="stylesheet" href="/assets/tufted.css">
+    <link rel="stylesheet" href="/assets/kych.css">
     <link rel="stylesheet" href="/assets/custom.css">
   </head>
   <body>
@@ -25,13 +25,13 @@
         <h3>API</h3>
         <p>目前，实现了三个功能：</p>
         <ul>
-          <li><code>tufted-web</code>—主模板</li>
+          <li><code>kych-web</code>—主模板</li>
           <li><code>margin-note</code>—将内容放在边距备注中（支持有限）</li>
           <li><code>full-width</code>—将内容放在全宽容器中（支持有限）</li>
         </ul>
         <h3>结构和继承</h3>
         <p>该网站是分层的。根从<code>../config.typ</code>导入，而子页面从其父<code>../index.typ</code>文件导入，启用继承——无需从祖父母导入。</p>
-        <p>所有页面都继承了<code>config.typ</code>中的定义，因此可以直接使用<code>template</code>和<code>tufted</code>等定义，而无需导入。</p>
+        <p>所有页面都继承了<code>config.typ</code>中的定义，因此可以直接使用<code>template</code>和<code>kych</code>等定义，而无需导入。</p>
         <p>您可以在任何级别修改定义，子页面将继承更改。例如，要更改页面标题，请从父定义中导入所有定义并修改template：</p>
         <pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"../index.typ"</span>: <span style="color: #d73948">*</span><br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: template.<span style="color: #4b69c6">with</span>(title: <span style="color: #198810">"标题"</span>)</code></pre>
       </section>
