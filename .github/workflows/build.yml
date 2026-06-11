@@ -1,0 +1,62 @@
+name: Build and deploy to make branch
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y make texlive texlive-latex-extra latexmk
+          # 如果你还依赖 Python 或其他工具，请在此添加，例如：
+          # pip install sphinx
+
+      - name: Run make pdf and make html
+        run: |
+          make pdf
+          make html
+
+      - name: Prepare artifacts for deployment
+        run: |
+          mkdir -p deploy_artifacts
+          # 复制 PDF 文件（_pdf 目录下的内容）
+          if [ -d "_pdf" ]; then
+            cp -r _pdf/* deploy_artifacts/ 2>/dev/null || true
+          fi
+          # 复制 HTML 站点（_site 目录下的内容）
+          if [ -d "_site" ]; then
+            cp -r _site/* deploy_artifacts/ 2>/dev/null || true
+          fi
+
+      - name: Deploy to make branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git clone --depth 1 https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} ../repo_make
+          cd ../repo_make
+          git checkout make || git checkout --orphan make
+
+          # 清空分支现有内容（保留 .git）
+          find . -maxdepth 1 ! -name .git ! -name . -exec rm -rf {} +
+
+          # 复制新生成的产物
+          cp -r ${{ github.workspace }}/deploy_artifacts/* .
+
+          git add --all
+          git commit -m "Deploy from main commit ${{ github.sha }}"
+          git push origin make --force
