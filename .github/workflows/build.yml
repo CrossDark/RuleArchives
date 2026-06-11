@@ -16,12 +16,10 @@ jobs:
         with:
           ref: main
 
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y make texlive texlive-latex-extra latexmk
-          # 如果你还依赖 Python 或其他工具，请在此添加，例如：
-          # pip install sphinx
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+        with:
+          typst-version: latest
 
       - name: Run make pdf and make html
         run: |
