@@ -1,5 +1,14 @@
 #import "../index.typ": template, kych
+#import "@preview/citegeist:0.2.2": load-bibliography
 #show: template.with(title: "动物园")
+
+#{
+  let bib = load-bibliography(read("../../refs.bib"))
+  let entry = bib.at("shiliuyezi-zoo", default: none)
+  if entry != none {
+    kych.margin-note[作者：\ #entry.fields.author]
+  }
+}
 
 #set heading(numbering: "1.1") // Set heading numbering to 1.1, 1.2, etc. / 设置标题编号为1.1、1.2等
 
