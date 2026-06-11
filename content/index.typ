@@ -4,10 +4,6 @@
 
 = kych
 
-#kych.margin-note[
-  The kych duck (_Aythya fuligula_) is a medium-sized diving duck native to Eurasia. Known for its diving ability, it can plunge to great depths to forage for food.
-]
-
 // NOTE: This page is generated from the README.md file
 #{
   let md-content = read("../README.md")
